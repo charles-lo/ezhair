@@ -1,7 +1,9 @@
 <resources>
 
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- page home -->
+    <dimen name="page_home_btn_len">90dp</dimen>
+    <dimen name="page_home_margin">7dp</dimen>
+    <dimen name="page_home_notification_width">220dp</dimen>
+    <dimen name="page_home_notification_height">90dp</dimen>
 
 </resources>
