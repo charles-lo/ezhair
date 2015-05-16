@@ -2,6 +2,11 @@
 <resources>
 
     <string name="app_name">ezhair</string>
-    <string name="action_settings">Settings</string>
+    <!-- page home -->
+    <string name="page_home_title">輕鬆預約你專屬的髮型設計師</string>
+    <string name="page_home_hot">熱門</string>
+    <string name="page_home_near">最近</string>
+    <string name="page_home_search">自訂</string>
+    <string name="page_home_mail">提醒</string>
 
 </resources>

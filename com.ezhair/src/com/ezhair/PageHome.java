@@ -16,6 +16,7 @@ public class PageHome extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_home, container, false);
+		final View title = rootView.findViewById(R.id.title);
 		final View notification = rootView.findViewById(R.id.notification);
 		final View hot = rootView.findViewById(R.id.hot);
 		final View near = rootView.findViewById(R.id.near);
@@ -26,6 +27,7 @@ public class PageHome extends Fragment {
 			public void handleMessage(Message msg) {
 				switch (msg.what) {
 				case MESSAGE_STATE_LAUNCH: {
+					title.setVisibility(View.INVISIBLE);
 					notification.setVisibility(View.VISIBLE);
 					hot.setVisibility(View.VISIBLE);
 					near.setVisibility(View.VISIBLE);

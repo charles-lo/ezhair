@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- page home -->
+    <color name="page_home_mask_color">#CC000000  </color>
+    <color name="page_home_font_color">#b1bf93  </color>
+
+</resources>
