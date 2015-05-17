@@ -5,6 +5,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 	FragmentTransaction ft = null;
 
 	@Override
@@ -50,10 +51,16 @@ public class MainActivity extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	public void onBackPressed() {
+
+		if (!getFragmentManager().popBackStackImmediate()) {
+			finish();
+		}
+
+	}
+
 	public void replaceFragment(Fragment newFragment) {
-		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.replace(R.id.container, newFragment);
-		ft.addToBackStack(null);
-		ft.commit();
+		getFragmentManager().beginTransaction().replace(R.id.container, newFragment).addToBackStack(null).commit();
 	}
 }

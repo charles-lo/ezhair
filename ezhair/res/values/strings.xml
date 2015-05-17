@@ -8,5 +8,10 @@
     <string name="page_home_near">最近</string>
     <string name="page_home_search">自訂</string>
     <string name="page_home_mail">提醒</string>
+    <!-- page signin -->
+    <string name="page_signin_title">會員登入</string>
+    <string name="page_signin_sumbit">送出</string>
+    <string name="page_signin_register">新會員註冊</string>
+    <string name="page_signin_forget">忘記密碼</string>
 
 </resources>
