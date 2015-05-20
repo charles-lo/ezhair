@@ -1,5 +1,7 @@
 <resources>
 
+    <!-- common -->
+    <dimen name="listitem_height">60dp</dimen>
     <!-- page home -->
     <dimen name="page_home_btn_len">90dp</dimen>
     <dimen name="page_home_margin">7dp</dimen>
@@ -14,5 +16,9 @@
     <dimen name="page_signin_icon_len">40dp</dimen>
     <dimen name="page_signin_btn_width">248dp</dimen>
     <dimen name="page_signin_btn_height">50dp</dimen>
+    <!-- page search -->
+    <dimen name="page_search_title_width">100dp</dimen>
+    <dimen name="page_search_icon_width">20dp</dimen>
+    <dimen name="page_search_icon_height">40dp</dimen>
 
 </resources>

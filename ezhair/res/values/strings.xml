@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- common -->
     <string name="app_name">ezhair</string>
+    <string name="page_signin_sumbit">送出</string>
     <!-- page home -->
     <string name="page_home_title">輕鬆預約你專屬的髮型設計師</string>
     <string name="page_home_hot">熱門</string>
@@ -10,8 +12,16 @@
     <string name="page_home_mail">提醒</string>
     <!-- page signin -->
     <string name="page_signin_title">會員登入</string>
-    <string name="page_signin_sumbit">送出</string>
     <string name="page_signin_register">新會員註冊</string>
     <string name="page_signin_forget">忘記密碼</string>
+    <!-- page register -->
+    <string name="page_register_title">加入會員</string>
+    <string name="page_register">註冊</string>
+    <!-- page forget -->
+    <string name="page_forget_title">忘記密碼</string>
+    <string name="page_forget_des">密碼將以簡訊寄出</string>
+    <!-- page search -->
+    <string name="page_search_title">自訂搜尋</string>
+    <string name="page_search_des">密碼將以簡訊寄出</string>
 
 </resources>

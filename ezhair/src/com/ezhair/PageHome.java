@@ -26,13 +26,22 @@ public class PageHome extends Fragment {
 		final View near = rootView.findViewById(R.id.near);
 		final View search = rootView.findViewById(R.id.search);
 		final View mail = rootView.findViewById(R.id.mail);
-		
+
 		hot.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				 ((MainActivity)getActivity()).replaceFragment(new PageSignin());
-				
+				((MainActivity) getActivity()).replaceFragment(new PageSignin());
+
+			}
+		});
+
+		search.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).replaceFragment(new PageSearch());
+
 			}
 		});
 
