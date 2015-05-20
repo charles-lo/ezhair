@@ -19,7 +19,7 @@
     <string name="page_register">註冊</string>
     <!-- page forget -->
     <string name="page_forget_title">忘記密碼</string>
-    <string name="page_forget_des">密碼將以簡訊寄出</string>
+    <string name="page_forget_des">密碼將以Email寄出</string>
     <!-- page search -->
     <string name="page_search_title">自訂搜尋</string>
     <string name="page_search_des">密碼將以簡訊寄出</string>

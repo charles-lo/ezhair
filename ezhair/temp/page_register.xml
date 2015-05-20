@@ -36,7 +36,7 @@
             android:layout_height="@dimen/page_signin_icon_len"
             android:layout_marginLeft="@dimen/page_signin_margin_bordor"
             android:layout_marginRight="@dimen/page_signin_margin_icon"
-            android:src="@drawable/icon_phone" />
+            android:src="@drawable/phone" />
 
         <EditText
             android:id="@+id/nun_edit"
@@ -63,7 +63,7 @@
             android:layout_height="@dimen/page_signin_icon_len"
             android:layout_marginLeft="@dimen/page_signin_margin_bordor"
             android:layout_marginRight="@dimen/page_signin_margin_icon"
-            android:src="@drawable/icon_password" />
+            android:src="@drawable/password" />
 
         <EditText
             android:id="@+id/pwsd_edit"
@@ -89,7 +89,7 @@
             android:layout_height="@dimen/page_signin_icon_len"
             android:layout_marginLeft="@dimen/page_signin_margin_bordor"
             android:layout_marginRight="@dimen/page_signin_margin_icon"
-            android:src="@drawable/icon_password" />
+            android:src="@drawable/password" />
 
         <EditText
             android:id="@+id/pwsd_confirm_edit"
