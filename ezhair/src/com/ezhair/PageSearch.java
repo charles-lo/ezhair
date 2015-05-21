@@ -15,72 +15,73 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class PageSearch extends Fragment {
-    View rootLayout;// = (View) findViewById(R.id.main_activity_root);
-    View m_CardFace;// = (View) findViewById(R.id.main_activity_card_face);
-    View m_CardBack;// = (View) findViewById(R.id.main_activity_card_back);
-    private int m_FirstVisibleItem;
-    private boolean toogle;
-	
+	private View m_RootLayout;
+	private View m_CardFace;
+	private View m_CardBack;
+	private boolean toogleGreen, toogleBlack = true;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_search, container, false);
-		rootLayout = rootView.findViewById(R.id.search_title);
+		m_RootLayout = rootView.findViewById(R.id.search_title);
 		ListView list = (ListView) rootView.findViewById(R.id.listView);
-		final View title = (LinearLayout) rootView.findViewById(R.id.black_bar);
 		m_CardFace = rootView.findViewById(R.id.green_bar);
-		m_CardBack = title;
+		m_CardBack = rootView.findViewById(R.id.black_bar);
 		list.setAdapter(new SearchAdapter());
-		list.setOnTouchListener(new OnTouchListener(){
+		list.setOnTouchListener(new OnTouchListener() {
 
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 
 				return false;
-			}});
-		list.setOnScrollListener(new OnScrollListener(){
+			}
+		});
+		list.setOnScrollListener(new OnScrollListener() {
 
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
-				
+
 			}
 
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-				m_FirstVisibleItem = firstVisibleItem;
-				if(firstVisibleItem == 0&& m_CardFace.getVisibility()==View.GONE && toogle){
-					toogle = false;
-					flipCard(m_CardFace, m_CardBack);
-				}else if(firstVisibleItem != 0 && m_CardBack.getVisibility()==View.GONE){
-					flipCard(m_CardBack, m_CardFace);
-					toogle = true;
+				if (firstVisibleItem == 0 && m_CardFace.getVisibility() == View.GONE && toogleGreen) {
+					toogleGreen = false;
+					flipCard(m_RootLayout, m_CardFace, m_CardBack);
+					toogleBlack = true;
+				} else if (firstVisibleItem != 0 && m_CardBack.getVisibility() == View.GONE && toogleBlack) {
+					toogleBlack = false;
+					flipCard(m_RootLayout, m_CardBack, m_CardFace);
+					toogleGreen = true;
 				}
-				
-			}});
+
+			}
+		});
 		return rootView;
 	}
-	
-	private void flipCard(View cardFace, View cardBack)
-	{
-	 
-	    FlipAnimation flipAnimation = new FlipAnimation(cardFace, cardBack);
-	 
-	    if (cardFace.getVisibility() == View.GONE)
-	    {
-	        flipAnimation.reverse();
-	    }
-	    rootLayout.startAnimation(flipAnimation);
+
+	private void flipCard(View rootLayout, View cardFace, View cardBack) {
+
+		FlipAnimation flipAnimation = new FlipAnimation(cardFace, cardBack);
+
+		if (cardFace.getVisibility() == View.GONE) {
+			flipAnimation.reverse();
+		}
+		rootLayout.startAnimation(flipAnimation);
 	}
 
 	class SearchAdapter extends BaseAdapter {
 
 		private List<Item> m_Data = new ArrayList<Item>();
 		static final private int TYPE_DESC = 0;
-		static final private int TYPE_BTN = 1; 
+		static final private int TYPE_BTN = 1;
+		static final private int TYPE_EDIT = 2;
+		static final private int TYPE_RATE = 3;
 
 		class Item {
 			int m_Type;
@@ -98,19 +99,24 @@ public class PageSearch extends Fragment {
 				m_Title = title;
 				m_Desc = Desc;
 			}
+
+			Item(int type, String title, int value) {
+				m_Type = type;
+				m_Title = title;
+				m_Value = value;
+			}
 		}
 
 		SearchAdapter() {
-			m_Data.add(new Item("店家", "日式威廉"));
-			m_Data.add(new Item("縣市", "日式威廉"));
-			m_Data.add(new Item("區", "日式威廉"));
-			m_Data.add(new Item("評價", "日式威廉"));
-			m_Data.add(new Item("年資", "日式威廉"));
-			m_Data.add(new Item("性別", "日式威廉"));
-			m_Data.add(new Item("折扣", "日式威廉"));
-			m_Data.add(new Item("名字關鍵字", "日式威廉"));
-//			m_Data.add(new Item(TYPE_BTN,"", ""));
-			m_Data.add(new Item(TYPE_BTN,"", ""));
+			m_Data.add(new Item(TYPE_EDIT, "店家", ""));
+			m_Data.add(new Item("縣市", "台北市"));
+			m_Data.add(new Item("區", "士林區"));
+			m_Data.add(new Item(TYPE_RATE, "評價", 5));
+			m_Data.add(new Item("年資", "2年"));
+			m_Data.add(new Item("性別", "不拘"));
+			m_Data.add(new Item("折扣", "不拘"));
+			m_Data.add(new Item(TYPE_EDIT, "名字關鍵字", ""));
+			m_Data.add(new Item(TYPE_BTN, "", ""));
 		}
 
 		@Override
@@ -134,23 +140,56 @@ public class PageSearch extends Fragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder holder = new ViewHolder();
+			int type =m_Data.get(position).m_Type;
 			if (convertView == null) {
-				if (m_Data.get(position).m_Type == TYPE_DESC) {
-					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_search_01, parent, false);
+				if (type == TYPE_DESC) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_text, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.desc = (TextView) convertView.findViewById(R.id.desc);
-				} else {
-					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_search_02, parent, false);
-					holder.btn = convertView.findViewById(R.id.sumbit);
+				} else if (type == TYPE_BTN) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_btn, parent, false);
+					holder.btn = (TextView) convertView.findViewById(R.id.btn);
+				} else if (type == TYPE_RATE) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_rate, parent, false);
+					holder.btn = (TextView) convertView.findViewById(R.id.btn);
+				} else if (type == TYPE_EDIT) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
+					holder.category = (TextView) convertView.findViewById(R.id.category);
+					holder.edit = (EditText) convertView.findViewById(R.id.edit);
 				}
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
+				if (holder.type_desc==null && type == TYPE_DESC) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_text, parent, false);
+					holder.category = (TextView) convertView.findViewById(R.id.category);
+					holder.desc = (TextView) convertView.findViewById(R.id.desc);
+					convertView.setTag(holder);
+				} else if (holder.type_btn==null && type == TYPE_BTN) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_btn, parent, false);
+					holder.btn = (TextView) convertView.findViewById(R.id.btn);
+					convertView.setTag(holder);
+				} else if (holder.type_rate==null && type == TYPE_RATE) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_rate, parent, false);
+					holder.btn = (TextView) convertView.findViewById(R.id.btn);
+					convertView.setTag(holder);
+				} else if (holder.type_edit==null && type == TYPE_EDIT) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
+					holder.category = (TextView) convertView.findViewById(R.id.category);
+					holder.edit = (EditText) convertView.findViewById(R.id.edit);
+					convertView.setTag(holder);
+				}
 			}
-			
+
 			if (m_Data.get(position).m_Type == TYPE_DESC) {
-				holder.category.setText(m_Data.get(position).m_Title);
 				holder.desc.setText(m_Data.get(position).m_Desc);
+			}
+			if (m_Data.get(position).m_Type == TYPE_BTN) {
+				holder.btn.setText(R.string.page_search_btn);
+			}
+			if (m_Data.get(position).m_Type == TYPE_EDIT) {
+				holder.category.setText(m_Data.get(position).m_Title);
+				holder.edit.setText(m_Data.get(position).m_Desc);
 			}
 			if (m_Data.get(position).m_Type == TYPE_DESC) {
 				if (position % 2 == 1) {
@@ -164,9 +203,14 @@ public class PageSearch extends Fragment {
 		}
 
 		class ViewHolder {
+			View type_desc;
+			View type_btn;
+			View type_rate;
+			View type_edit;
 			TextView category;
 			TextView desc;
-			View btn;
+			TextView btn;
+			EditText edit;
 		}
 	}
 }

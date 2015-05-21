@@ -48,7 +48,7 @@
             android:layout_height="@dimen/page_signin_icon_len"
             android:layout_marginLeft="@dimen/page_signin_margin_bordor"
             android:layout_marginRight="@dimen/page_signin_margin_icon"
-            android:src="@drawable/icon_phone" />
+            android:src="@drawable/icon_email" />
 
         <EditText
             android:id="@+id/nun_edit"
@@ -57,6 +57,7 @@
             android:layout_marginRight="@dimen/page_signin_margin_bordor"
             android:layout_toRightOf="@id/num_icon"
             android:background="@drawable/rounded_edittext"
+            android:hint="@string/hine04"
             android:inputType="number"
             android:padding="10dp" />
     </RelativeLayout>

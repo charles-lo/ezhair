@@ -45,6 +45,7 @@
             android:layout_marginRight="@dimen/page_signin_margin_bordor"
             android:layout_toRightOf="@id/num_icon"
             android:background="@drawable/rounded_edittext"
+            android:hint="@string/hine01"
             android:inputType="number"
             android:padding="10dp" />
     </RelativeLayout>
@@ -72,6 +73,7 @@
             android:layout_marginRight="@dimen/page_signin_margin_bordor"
             android:layout_toRightOf="@id/pwsd_icon"
             android:background="@drawable/rounded_edittext"
+            android:hint="@string/hine02"
             android:padding="10dp" />
     </RelativeLayout>
 
