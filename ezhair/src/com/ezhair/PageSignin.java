@@ -3,10 +3,12 @@ package com.ezhair;
 import com.ezhair.R;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class PageSignin extends Fragment {
 
@@ -27,6 +29,11 @@ public class PageSignin extends Fragment {
 				((MainActivity) getActivity()).replaceFragment(new PageForget());
 			}
 		});
+		
+		TextView title = (TextView)rootView.findViewById(R.id.prefix);
+		title.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/Helvetica.ttf"));
+		title = (TextView)rootView.findViewById(R.id.suffix);
+		title.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/Helvetica.ttf"));
 		
 		return rootView;
 	}

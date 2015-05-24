@@ -3,13 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/getpswd"
-        android:layout_width="270dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/page_signin_top"
-        android:src="@drawable/getpassword" />
+        android:layout_marginTop="@dimen/page_signin_top" >
+
+        <TextView
+            android:id="@+id/prefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page_forget_prefix"
+            android:textColor="@color/title_prefix"
+            android:textSize="@dimen/title_font" />
+
+        <TextView
+            android:id="@+id/suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page_forget_suffix"
+            android:textColor="@color/title_suffix"
+            android:textSize="@dimen/title_font" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/getpswd_text"

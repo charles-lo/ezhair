@@ -15,13 +15,19 @@
     <string name="page_home_search">自訂</string>
     <string name="page_home_mail">提醒</string>
     <!-- page signin -->
+    <string name="page_signin_prefix">S</string>
+    <string name="page_signin_suffix">ign in</string>
     <string name="page_signin_title">會員登入</string>
     <string name="page_signin_register">新會員註冊</string>
     <string name="page_signin_forget">忘記密碼</string>
     <!-- page register -->
+    <string name="page_register_prefix">R</string>
+    <string name="page_register_suffix">egister</string>
     <string name="page_register_title">加入會員</string>
     <string name="page_register">註冊</string>
     <!-- page forget -->
+    <string name="page_forget_prefix">G</string>
+    <string name="page_forget_suffix">etpassword</string>
     <string name="page_forget_title">忘記密碼</string>
     <string name="page_forget_des">密碼將以Email寄出</string>
     <!-- page search -->

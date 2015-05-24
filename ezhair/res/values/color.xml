@@ -4,6 +4,8 @@
     <!-- common -->
     <color name="font_color">#b1bf93  </color>
     <color name="list_font_color">#5c5c5c  </color>
+    <color name="title_prefix">#8fc31f  </color>
+    <color name="title_suffix">#dae000  </color>
     <color name="btn_green">#679700  </color>
     <color name="gray">#ececec  </color>
     <!-- page home -->
