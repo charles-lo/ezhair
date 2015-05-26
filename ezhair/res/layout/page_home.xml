@@ -10,16 +10,17 @@
         android:background="#CC000000" >
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
             android:animateLayoutChanges="true" >
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:paddingTop="190dp"
                 android:src="@drawable/logo" >
             </ImageView>
 
@@ -27,22 +28,27 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/logo"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_vertical"
+                android:paddingBottom="233.33dp"
                 android:text="@string/page_home_title"
-                android:textColor="@color/font_color" >
+                android:textColor="@color/title_color_01"
+                android:textSize="@dimen/font_size" >
             </TextView>
 
             <TextView
                 android:id="@+id/notification"
-                android:layout_width="@dimen/page_home_notification_width"
-                android:layout_height="@dimen/page_home_notification_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/logo"
                 android:layout_centerHorizontal="true"
+                android:paddingTop="40dp"
+                android:paddingBottom="71.33dp"
                 android:gravity="center_vertical"
                 android:text="您已預約:\n2015/5/25 pm:2:30 鍾大尾設計師"
-                android:textColor="@color/font_color"
+                android:textColor="@color/title_color_01"
+                android:textSize="@dimen/font_size"
                 android:visibility="gone" >
             </TextView>
 
@@ -50,8 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/notification"
-                android:layout_centerHorizontal="true"
-                android:animateLayoutChanges="true" >
+                android:layout_centerHorizontal="true">
 
                 <RelativeLayout
                     android:id="@+id/hot"
@@ -59,13 +64,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/page_home_margin"
                     android:layout_marginRight="@dimen/page_home_margin"
-                    android:layout_marginTop="@dimen/page_home_margin"
                     android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/hot_image"
-                        android:layout_width="@dimen/page_home_btn_len"
-                        android:layout_height="@dimen/page_home_btn_len"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/btn_id1" >
                     </ImageView>
 
@@ -78,7 +82,8 @@
                         android:layout_marginBottom="@dimen/page_home_margin"
                         android:gravity="center"
                         android:text="@string/page_home_hot"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -87,14 +92,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/page_home_margin"
                     android:layout_marginLeft="@dimen/page_home_margin"
-                    android:layout_marginTop="@dimen/page_home_margin"
                     android:layout_toRightOf="@id/hot"
                     android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/near_image"
-                        android:layout_width="@dimen/page_home_btn_len"
-                        android:layout_height="@dimen/page_home_btn_len"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/btn_id2" >
                     </ImageView>
 
@@ -107,7 +111,8 @@
                         android:layout_marginBottom="@dimen/page_home_margin"
                         android:gravity="center"
                         android:text="@string/page_home_near"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -121,8 +126,8 @@
 
                     <ImageView
                         android:id="@+id/search_omage"
-                        android:layout_width="@dimen/page_home_btn_len"
-                        android:layout_height="@dimen/page_home_btn_len"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/btn_id3" >
                     </ImageView>
 
@@ -135,7 +140,8 @@
                         android:layout_marginBottom="@dimen/page_home_margin"
                         android:gravity="center"
                         android:text="@string/page_home_search"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -150,8 +156,8 @@
 
                     <ImageView
                         android:id="@+id/mail_image"
-                        android:layout_width="@dimen/page_home_btn_len"
-                        android:layout_height="@dimen/page_home_btn_len"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/btn_id4" >
                     </ImageView>
 
@@ -164,7 +170,8 @@
                         android:layout_marginBottom="@dimen/page_home_margin"
                         android:gravity="center"
                         android:text="@string/page_home_mail"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
                 </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>

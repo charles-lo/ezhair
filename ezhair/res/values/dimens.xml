@@ -1,6 +1,7 @@
 <resources>
 
     <!-- common -->
+    <dimen name="font_size">17sp</dimen>
     <dimen name="listitem_height">60dp</dimen>
     <dimen name="bottom_width">90dp</dimen>
     <dimen name="bottom_height">70dp</dimen>
@@ -8,7 +9,7 @@
     <dimen name="title_font">50sp</dimen>
     <!-- page home -->
     <dimen name="page_home_btn_len">90dp</dimen>
-    <dimen name="page_home_margin">7dp</dimen>
+    <dimen name="page_home_margin">5dp</dimen>
     <dimen name="page_home_notification_width">220dp</dimen>
     <dimen name="page_home_notification_height">90dp</dimen>
     <!-- page signin -->

@@ -20,6 +20,7 @@ public class PageHome extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_home, container, false);
+		final View logo = rootView.findViewById(R.id.logo);
 		final View title = rootView.findViewById(R.id.title);
 		final View notification = rootView.findViewById(R.id.notification);
 		final View hot = rootView.findViewById(R.id.hot);
@@ -49,6 +50,7 @@ public class PageHome extends Fragment {
 			public void handleMessage(Message msg) {
 				switch (msg.what) {
 				case MESSAGE_STATE_LAUNCH: {
+					logo.setPadding(0, (int) (getResources().getDisplayMetrics().density *72.67f), 0, 0);
 					title.setVisibility(View.GONE);
 					sendEmptyMessageDelayed(MESSAGE_STATE_BTN1, 500);
 					break;
@@ -77,7 +79,7 @@ public class PageHome extends Fragment {
 				super.handleMessage(msg);
 			}
 		};
-		handler.sendEmptyMessageDelayed(MESSAGE_STATE_LAUNCH, 1000);
+		handler.sendEmptyMessageDelayed(MESSAGE_STATE_LAUNCH, 2000);
 		return rootView;
 	}
 }
