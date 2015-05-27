@@ -35,8 +35,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:text="@string/page_signin_title"
-        android:textColor="@color/page_signin_font_color"
-        android:textSize="@dimen/page_signin_title_font" />
+        android:textColor="@color/title_prefix"
+        android:textSize="@dimen/font_size" />
 
     <RelativeLayout
         android:id="@+id/num"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signin_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66.67dp" >
+        android:layout_marginTop="61dp" >
 
         <ImageView
             android:id="@+id/num_icon"
@@ -56,14 +56,14 @@
         <EditText
             android:id="@+id/nun_edit"
             android:layout_width="225dp"
-            android:layout_height="32dp"
+            android:layout_height="32.33dp"
             android:layout_toRightOf="@id/num_icon"
             android:background="@drawable/rounded_edittext"
             android:gravity="center_vertical"
             android:hint="@string/hine01"
             android:inputType="number"
             android:paddingLeft="15dp"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_size" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/num"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/page_signin_margin_bordor" >
+        android:layout_marginTop="26.67dp" >
 
         <ImageView
             android:id="@+id/pwsd_icon"
@@ -85,52 +85,52 @@
         <EditText
             android:id="@+id/pwsd_edit"
             android:layout_width="225dp"
-            android:layout_height="32dp"
+            android:layout_height="32.33dp"
             android:layout_marginRight="@dimen/page_signin_margin_bordor"
             android:layout_toRightOf="@id/pwsd_icon"
             android:background="@drawable/rounded_edittext"
             android:gravity="center_vertical"
             android:hint="@string/hine02"
             android:paddingLeft="15dp"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_size" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/sumbit"
-        android:layout_width="@dimen/page_signin_btn_width"
-        android:layout_height="@dimen/page_signin_btn_height"
+        android:layout_width="200dp"
+        android:layout_height="40.33dp"
         android:layout_below="@id/pwsd"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48.67dp"
         android:background="@drawable/rounded_btn_green"
         android:gravity="center"
         android:text="@string/page_signin_sumbit"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/page_signin_title_font" />
+        android:textSize="@dimen/font_size" />
 
     <TextView
         android:id="@+id/register"
-        android:layout_width="@dimen/page_signin_btn_width"
-        android:layout_height="@dimen/page_signin_btn_height"
+        android:layout_width="200dp"
+        android:layout_height="40.33dp"
         android:layout_below="@id/sumbit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="23.33dp"
         android:background="@drawable/rounded_btn_yellow"
         android:gravity="center"
         android:text="@string/page_signin_register"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/page_signin_title_font" />
+        android:textSize="@dimen/font_size" />
 
     <TextView
         android:id="@+id/forget"
-        android:layout_width="@dimen/page_signin_btn_width"
-        android:layout_height="@dimen/page_signin_btn_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/register"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="@string/page_signin_forget"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/page_signin_title_font" />
+        android:textSize="@dimen/font_size" />
 
 </RelativeLayout>

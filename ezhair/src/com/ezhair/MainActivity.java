@@ -16,6 +16,7 @@ import android.view.Window;
 
 public class MainActivity extends Activity {
 	FragmentTransaction ft = null;
+	private boolean	launched = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +63,19 @@ public class MainActivity extends Activity {
 
 	public void replaceFragment(Fragment newFragment) {
 		getFragmentManager().beginTransaction().replace(R.id.container, newFragment).addToBackStack(null).commit();
+	}
+	
+	/**
+	 * @return the launched
+	 */
+	public boolean isLaunched() {
+		return launched;
+	}
+
+	/**
+	 * @param launched the launched to set
+	 */
+	public void setLaunched(boolean launched) {
+		this.launched = launched;
 	}
 }

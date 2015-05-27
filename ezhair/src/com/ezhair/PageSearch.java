@@ -82,6 +82,7 @@ public class PageSearch extends Fragment {
 		static final private int TYPE_BTN = 1;
 		static final private int TYPE_EDIT = 2;
 		static final private int TYPE_RATE = 3;
+		static final private int TYPE_SPACE = 4;
 
 		class Item {
 			int m_Type;
@@ -116,7 +117,7 @@ public class PageSearch extends Fragment {
 			m_Data.add(new Item("性別", "不拘"));
 			m_Data.add(new Item("折扣", "不拘"));
 			m_Data.add(new Item(TYPE_EDIT, "名字關鍵字", ""));
-			m_Data.add(new Item(TYPE_BTN, "", ""));
+			m_Data.add(new Item(TYPE_SPACE, "", ""));
 		}
 
 		@Override
@@ -156,6 +157,8 @@ public class PageSearch extends Fragment {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.edit = (EditText) convertView.findViewById(R.id.edit);
+				} else if (type == TYPE_SPACE) {
+					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_space, parent, false);
 				}
 				convertView.setTag(holder);
 			} else {
@@ -191,7 +194,7 @@ public class PageSearch extends Fragment {
 				holder.category.setText(m_Data.get(position).m_Title);
 				holder.edit.setText(m_Data.get(position).m_Desc);
 			}
-			if (m_Data.get(position).m_Type == TYPE_DESC) {
+			if (m_Data.get(position).m_Type == TYPE_DESC || m_Data.get(position).m_Type == TYPE_EDIT) {
 				if (position % 2 == 1) {
 					convertView.setBackgroundColor(getActivity().getResources().getColor(android.R.color.white));
 				} else {

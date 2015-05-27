@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class PageHome extends Fragment {
+	MainActivity m_Activity;
 	static private final int MESSAGE_STATE_LAUNCH = 1000;
 	static private final int MESSAGE_STATE_BTN1 = 1001;
 	static private final int MESSAGE_STATE_BTN2 = 1002;
@@ -20,6 +21,7 @@ public class PageHome extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_home, container, false);
+		m_Activity = (MainActivity) getActivity();
 		final View logo = rootView.findViewById(R.id.logo);
 		final View title = rootView.findViewById(R.id.title);
 		final View notification = rootView.findViewById(R.id.notification);
@@ -79,7 +81,12 @@ public class PageHome extends Fragment {
 				super.handleMessage(msg);
 			}
 		};
-		handler.sendEmptyMessageDelayed(MESSAGE_STATE_LAUNCH, 2000);
+		int delayTime = 0;
+		if(!m_Activity.isLaunched()){
+			delayTime = 2000;
+			m_Activity.setLaunched(true);
+		}
+		handler.sendEmptyMessageDelayed(MESSAGE_STATE_LAUNCH, delayTime);
 		return rootView;
 	}
 }

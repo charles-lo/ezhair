@@ -5,26 +5,29 @@
 
     <ImageView
         android:id="@+id/bottom_01"
-        android:layout_width="@dimen/bottom_width"
-        android:layout_height="@dimen/bottom_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
         android:src="@drawable/tabbar_foorter_search" />
 
     <ImageView
         android:id="@+id/bottom_02"
-        android:layout_width="@dimen/bottom_width"
-        android:layout_height="@dimen/bottom_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
         android:src="@drawable/tabbar_foorter_record" />
 
     <ImageView
         android:id="@+id/bottom_03"
-        android:layout_width="@dimen/bottom_width"
-        android:layout_height="@dimen/bottom_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
         android:src="@drawable/tabbar_foorter_msg" />
 
     <ImageView
         android:id="@+id/bottom_04"
-        android:layout_width="@dimen/bottom_width"
-        android:layout_height="@dimen/bottom_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/tabbar_foorter_setup" />
 
 </LinearLayout>
