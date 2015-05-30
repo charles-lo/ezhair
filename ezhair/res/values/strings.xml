@@ -34,5 +34,9 @@
     <string name="page_search_title">自訂搜尋</string>
     <string name="page_search_des">密碼將以簡訊寄出</string>
     <string name="page_search_btn">搜尋</string>
+    <!-- page hot -->
+    <string name="hot_artist">熱門設計師</string>
+    <!-- page near -->
+    <string name="near_search">附近搜尋</string>
 
 </resources>

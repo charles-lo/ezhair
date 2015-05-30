@@ -9,6 +9,7 @@
     <dimen name="bottom_width">90dp</dimen>
     <dimen name="bottom_height">70dp</dimen>
     <dimen name="rate_len">30dp</dimen>
+    <dimen name="rate_len_01">23.33dp</dimen>
     <!-- page home -->
     <dimen name="page_home_btn_len">90dp</dimen>
     <dimen name="page_home_margin">5dp</dimen>

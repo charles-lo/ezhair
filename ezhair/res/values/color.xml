@@ -8,6 +8,7 @@
     <color name="title_suffix">#dae000  </color>
     <color name="btn_green">#679700  </color>
     <color name="gray">#ececec  </color>
+    <color name="gray_star">#bfbfbf  </color>
     <!-- page home -->
     <color name="page_home_mask_color">#CC000000  </color>
 

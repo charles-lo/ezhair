@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:textColor="#000000"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/name"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:textColor="@color/list_font_color"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/name"
+        android:paddingBottom="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/list_font_color"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp" >
+
+        <ImageView
+            android:id="@+id/rate_01"
+            android:layout_width="@dimen/rate_len_01"
+            android:layout_height="@dimen/rate_len_01"
+            android:paddingLeft="2.67dp"
+            android:src="@drawable/icon_star_n" />
+
+        <ImageView
+            android:id="@+id/rate_02"
+            android:layout_width="@dimen/rate_len_01"
+            android:layout_height="@dimen/rate_len_01"
+            android:paddingLeft="2.67dp"
+            android:src="@drawable/icon_star_n" />
+
+        <ImageView
+            android:id="@+id/rate_03"
+            android:layout_width="@dimen/rate_len_01"
+            android:layout_height="@dimen/rate_len_01"
+            android:paddingLeft="2.67dp"
+            android:src="@drawable/icon_star_n" />
+
+        <ImageView
+            android:id="@+id/rate_04"
+            android:layout_width="@dimen/rate_len_01"
+            android:layout_height="@dimen/rate_len_01"
+            android:paddingLeft="2.67dp"
+            android:src="@drawable/icon_star_n" />
+
+        <ImageView
+            android:id="@+id/rate_05"
+            android:layout_width="@dimen/rate_len_01"
+            android:layout_height="@dimen/rate_len_01"
+            android:paddingLeft="2.67dp"
+            android:src="@drawable/icon_star_n" />
+    </LinearLayout>
+
+</RelativeLayout>

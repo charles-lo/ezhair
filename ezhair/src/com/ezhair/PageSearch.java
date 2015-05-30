@@ -28,10 +28,12 @@ public class PageSearch extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.page_search, container, false);
+		View rootView = inflater.inflate(R.layout.page_common, container, false);
 		final View bottom = rootView.findViewById(R.id.bottom);
-		m_RootLayout = rootView.findViewById(R.id.search_title);
+		m_RootLayout = rootView.findViewById(R.id.title);
 		ListView list = (ListView) rootView.findViewById(R.id.listView);
+		rootView.findViewById(R.id.center_tab).setBackgroundResource(R.drawable.rounded_btn_black_center_selected);
+		((TextView)rootView.findViewById(R.id.page_title)).setText(R.string.page_search_title);
 		m_CardFace = rootView.findViewById(R.id.green_bar);
 		m_CardBack = rootView.findViewById(R.id.black_bar);
 		((ImageView) rootView.findViewById(R.id.bottom_01)).setImageResource(R.drawable.tabbar_foorter_search_select);

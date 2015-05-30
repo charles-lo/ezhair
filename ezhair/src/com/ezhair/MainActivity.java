@@ -78,4 +78,5 @@ public class MainActivity extends Activity {
 	public void setLaunched(boolean launched) {
 		this.launched = launched;
 	}
+
 }
