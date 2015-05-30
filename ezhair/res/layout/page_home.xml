@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="@drawable/bg_index" >
 
     <RelativeLayout
@@ -12,8 +13,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:animateLayoutChanges="true" >
+            android:layout_centerHorizontal="true" >
 
             <ImageView
                 android:id="@+id/logo"
@@ -43,9 +43,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/logo"
                 android:layout_centerHorizontal="true"
-                android:paddingTop="40dp"
-                android:paddingBottom="71.33dp"
                 android:gravity="center_vertical"
+                android:paddingBottom="71.33dp"
+                android:paddingTop="40dp"
                 android:text="您已預約:\n2015/5/25 pm:2:30 鍾大尾設計師"
                 android:textColor="@color/title_color_01"
                 android:textSize="@dimen/font_size"
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/notification"
-                android:layout_centerHorizontal="true">
+                android:layout_centerHorizontal="true" >
 
                 <RelativeLayout
                     android:id="@+id/hot"
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/page_home_margin"
                     android:layout_marginRight="@dimen/page_home_margin"
-                    android:visibility="gone" >
+                    android:visibility="invisible" >
 
                     <ImageView
                         android:id="@+id/hot_image"
@@ -93,7 +93,7 @@
                     android:layout_marginBottom="@dimen/page_home_margin"
                     android:layout_marginLeft="@dimen/page_home_margin"
                     android:layout_toRightOf="@id/hot"
-                    android:visibility="gone" >
+                    android:visibility="invisible" >
 
                     <ImageView
                         android:id="@+id/near_image"
@@ -122,7 +122,7 @@
                     android:layout_below="@id/hot"
                     android:layout_marginRight="@dimen/page_home_margin"
                     android:layout_marginTop="@dimen/page_home_margin"
-                    android:visibility="gone" >
+                    android:visibility="invisible" >
 
                     <ImageView
                         android:id="@+id/search_omage"
@@ -152,7 +152,7 @@
                     android:layout_marginLeft="@dimen/page_home_margin"
                     android:layout_marginTop="@dimen/page_home_margin"
                     android:layout_toRightOf="@id/search"
-                    android:visibility="gone" >
+                    android:visibility="invisible" >
 
                     <ImageView
                         android:id="@+id/mail_image"

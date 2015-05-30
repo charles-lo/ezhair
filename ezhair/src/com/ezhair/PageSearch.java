@@ -16,6 +16,7 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,10 +29,12 @@ public class PageSearch extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_search, container, false);
+		final View bottom = rootView.findViewById(R.id.bottom);
 		m_RootLayout = rootView.findViewById(R.id.search_title);
 		ListView list = (ListView) rootView.findViewById(R.id.listView);
 		m_CardFace = rootView.findViewById(R.id.green_bar);
 		m_CardBack = rootView.findViewById(R.id.black_bar);
+		((ImageView) rootView.findViewById(R.id.bottom_01)).setImageResource(R.drawable.tabbar_foorter_search_select);
 		list.setAdapter(new SearchAdapter());
 		list.setOnTouchListener(new OnTouchListener() {
 
@@ -53,10 +56,12 @@ public class PageSearch extends Fragment {
 				if (firstVisibleItem == 0 && m_CardFace.getVisibility() == View.GONE && toogleGreen) {
 					toogleGreen = false;
 					flipCard(m_RootLayout, m_CardFace, m_CardBack);
+					bottom.setVisibility(View.VISIBLE);
 					toogleBlack = true;
 				} else if (firstVisibleItem != 0 && m_CardBack.getVisibility() == View.GONE && toogleBlack) {
 					toogleBlack = false;
 					flipCard(m_RootLayout, m_CardBack, m_CardFace);
+					bottom.setVisibility(View.GONE);
 					toogleGreen = true;
 				}
 
@@ -89,10 +94,17 @@ public class PageSearch extends Fragment {
 			String m_Title;
 			String m_Desc;
 			int m_Value;
+			int m_Color;
 
 			Item(String title, String Desc) {
 				m_Title = title;
 				m_Desc = Desc;
+			}
+
+			Item(String title, String Desc, int Color) {
+				m_Title = title;
+				m_Desc = Desc;
+				m_Color = Color;
 			}
 
 			Item(int type, String title, String Desc) {
@@ -115,7 +127,7 @@ public class PageSearch extends Fragment {
 			m_Data.add(new Item(TYPE_RATE, "評價", 5));
 			m_Data.add(new Item("年資", "2年"));
 			m_Data.add(new Item("性別", "不拘"));
-			m_Data.add(new Item("折扣", "不拘"));
+			m_Data.add(new Item("折扣", "不拘", getActivity().getResources().getColor(R.color.btn_green)));
 			m_Data.add(new Item(TYPE_EDIT, "名字關鍵字", ""));
 			m_Data.add(new Item(TYPE_SPACE, "", ""));
 		}
@@ -141,7 +153,7 @@ public class PageSearch extends Fragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder holder = new ViewHolder();
-			int type =m_Data.get(position).m_Type;
+			int type = m_Data.get(position).m_Type;
 			if (convertView == null) {
 				if (type == TYPE_DESC) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_text, parent, false);
@@ -152,6 +164,7 @@ public class PageSearch extends Fragment {
 					holder.btn = (TextView) convertView.findViewById(R.id.btn);
 				} else if (type == TYPE_RATE) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_rate, parent, false);
+					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.btn = (TextView) convertView.findViewById(R.id.btn);
 				} else if (type == TYPE_EDIT) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
@@ -159,24 +172,32 @@ public class PageSearch extends Fragment {
 					holder.edit = (EditText) convertView.findViewById(R.id.edit);
 				} else if (type == TYPE_SPACE) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_space, parent, false);
+					convertView.setClickable(false);
+					convertView.setOnTouchListener(new OnTouchListener(){
+
+						@Override
+						public boolean onTouch(View v, MotionEvent event) {
+							return true;
+						}});
 				}
 				convertView.setTag(holder);
 			} else {
 				holder = (ViewHolder) convertView.getTag();
-				if (holder.type_desc==null && type == TYPE_DESC) {
+				if (holder.type_desc == null && type == TYPE_DESC) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_text, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.desc = (TextView) convertView.findViewById(R.id.desc);
 					convertView.setTag(holder);
-				} else if (holder.type_btn==null && type == TYPE_BTN) {
+				} else if (holder.type_btn == null && type == TYPE_BTN) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_btn, parent, false);
 					holder.btn = (TextView) convertView.findViewById(R.id.btn);
 					convertView.setTag(holder);
-				} else if (holder.type_rate==null && type == TYPE_RATE) {
+				} else if (holder.type_rate == null && type == TYPE_RATE) {
+					holder.category = (TextView) convertView.findViewById(R.id.category);
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_rate, parent, false);
 					holder.btn = (TextView) convertView.findViewById(R.id.btn);
 					convertView.setTag(holder);
-				} else if (holder.type_edit==null && type == TYPE_EDIT) {
+				} else if (holder.type_edit == null && type == TYPE_EDIT) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.edit = (EditText) convertView.findViewById(R.id.edit);
@@ -185,7 +206,16 @@ public class PageSearch extends Fragment {
 			}
 
 			if (m_Data.get(position).m_Type == TYPE_DESC) {
+				holder.category.setText(m_Data.get(position).m_Title);
 				holder.desc.setText(m_Data.get(position).m_Desc);
+				int color = m_Data.get(position).m_Color;
+				if (color != 0) {
+					holder.category.setTextColor(color);
+				}
+			}
+
+			if (m_Data.get(position).m_Type == TYPE_RATE) {
+				holder.category.setText(m_Data.get(position).m_Title);
 			}
 			if (m_Data.get(position).m_Type == TYPE_BTN) {
 				holder.btn.setText(R.string.page_search_btn);

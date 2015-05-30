@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -42,36 +43,49 @@
                 android:id="@+id/black_bar"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/listitem_height"
-                android:background="#000000"
+                android:background="#444444"
                 android:orientation="horizontal"
                 android:visibility="gone" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/listitem_height"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="7dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_btn_black_left"
                     android:gravity="center"
-                    android:text="@string/page_search_title"
+                    android:text="@string/page_home_hot"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/page_signin_title_font" />
+                    android:textSize="@dimen/font_size" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/listitem_height"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="7dp"
                     android:layout_weight="1"
+                    android:background="#000000"
                     android:gravity="center"
-                    android:text="@string/page_search_title"
+                    android:text="@string/page_home_search"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/page_signin_title_font" />
+                    android:textSize="@dimen/font_size" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/listitem_height"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_btn_black_right"
                     android:gravity="center"
-                    android:text="@string/page_search_title"
+                    android:text="@string/page_home_near"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/page_signin_title_font" />
+                    android:textSize="@dimen/font_size" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -95,8 +109,8 @@
             android:layout_width="@dimen/page_signin_btn_width"
             android:layout_height="@dimen/page_signin_btn_height"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
             android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
             android:background="@drawable/rounded_btn_green"
             android:gravity="center"
             android:text="@string/page_search_btn"
@@ -104,10 +118,11 @@
             android:textSize="@dimen/font_size" />
 
         <include
+            android:id="@+id/bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/btn"
+            android:layout_centerHorizontal="true"
             layout="@layout/bottom_bar" />
     </RelativeLayout>
 

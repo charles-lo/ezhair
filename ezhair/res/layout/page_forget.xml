@@ -82,7 +82,7 @@
         android:layout_below="@id/num"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:background="@drawable/rounded_btn_green"
+        android:background="@drawable/btn_green"
         android:gravity="center"
         android:text="@string/page_signin_sumbit"
         android:textColor="@android:color/white"

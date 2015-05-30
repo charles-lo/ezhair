@@ -15,7 +15,7 @@ public class PageSignin extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_signin, container, false);
-		 rootView.findViewById(R.id.register).setOnClickListener(new View.OnClickListener() {
+		rootView.findViewById(R.id.register).setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -29,12 +29,12 @@ public class PageSignin extends Fragment {
 				((MainActivity) getActivity()).replaceFragment(new PageForget());
 			}
 		});
-		
-		TextView title = (TextView)rootView.findViewById(R.id.prefix);
+
+		TextView title = (TextView) rootView.findViewById(R.id.prefix);
 		title.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/Helvetica.ttf"));
-		title = (TextView)rootView.findViewById(R.id.suffix);
+		title = (TextView) rootView.findViewById(R.id.suffix);
 		title.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/Helvetica.ttf"));
-		
+
 		return rootView;
 	}
 }
