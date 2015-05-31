@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -30,6 +31,14 @@ public class PageSearch extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.page_common, container, false);
 		final View bottom = rootView.findViewById(R.id.bottom);
+		final View btn = rootView.findViewById(R.id.btn);
+		btn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).replaceFragment(new PageResult());
+				
+			}});
 		m_RootLayout = rootView.findViewById(R.id.title);
 		ListView list = (ListView) rootView.findViewById(R.id.listView);
 		rootView.findViewById(R.id.center_tab).setBackgroundResource(R.drawable.rounded_btn_black_center_selected);

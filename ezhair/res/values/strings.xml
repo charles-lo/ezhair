@@ -38,5 +38,11 @@
     <string name="hot_artist">熱門設計師</string>
     <!-- page near -->
     <string name="near_search">附近搜尋</string>
+    <!-- page result -->
+    <string name="result_title">設計師</string>
+    <string name="rate">評價  :  </string>
+    <string name="store">店家 :  </string>
+    <string name="region">區域 :  </string>
+    <string name="discount">折扣 :  </string>
 
 </resources>

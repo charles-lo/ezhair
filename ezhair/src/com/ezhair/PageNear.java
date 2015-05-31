@@ -68,19 +68,6 @@ public class PageNear extends Fragment {
 
 			@Override
 			public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-				if (e1.getY() < e2.getY() && Math.abs(distanceY) > 50) {
-					m_ToogleBlack = false;
-					flipCard(m_RootLayout, m_CardBack, m_CardFace);
-					m_ToogleGreen = true;
-					return true;
-				}
-
-				if (e1.getY() > e2.getY() && Math.abs(distanceY) > 50) {
-					m_ToogleGreen = false;
-					flipCard(m_RootLayout, m_CardFace, m_CardBack);
-					m_ToogleBlack = true;
-					return true;
-				}
 				return false;
 			}
 
@@ -91,7 +78,19 @@ public class PageNear extends Fragment {
 
 			@Override
 			public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+				if (e1.getY() < e2.getY() && velocityY > 0 && !m_ToogleBlack) {
+					m_ToogleGreen = false;
+					flipCard(m_RootLayout, m_CardFace, m_CardBack);
+					m_ToogleBlack = true;
+					return true;
+				}
 
+				if (e1.getY() > e2.getY() && velocityY < 0 && !m_ToogleGreen) {
+					m_ToogleBlack = false;
+					flipCard(m_RootLayout, m_CardBack, m_CardFace);
+					m_ToogleGreen = true;
+					return true;
+				}
 				return false;
 			}
 		});
