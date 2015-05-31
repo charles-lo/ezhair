@@ -45,5 +45,9 @@
     <string name="store">店家 :  </string>
     <string name="region">區域 :  </string>
     <string name="discount">折扣 :  </string>
+    <!-- page profile -->
+    <string name="works">作品集</string>
+    <string name="msgs">留言</string>
+    <string name="favorites">最愛</string>
 
 </resources>

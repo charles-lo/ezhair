@@ -186,6 +186,13 @@ public class PageResult extends Fragment {
 			Uri uri = Uri.parse(uriBase + df.format(position + 20));
 			holder.avatar.setImageURI(uri);
 			holder.discount.setText(m_Data.get(position).m_Discount  ? "¦³" : "µL");
+			convertView.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					((MainActivity) getActivity()).replaceFragment(new PageProfile());
+					
+				}});
 
 			for (int i = 0; i < m_Data.get(position).m_Rate; i++) {
 				holder.rates.get(i).setImageResource(R.drawable.icon_star_select);
