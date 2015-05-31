@@ -41,7 +41,8 @@ public class PageNear extends Fragment {
 		View rootView = inflater.inflate(R.layout.page_near, container, false);
 		final View touch = rootView.findViewById(R.id.touch);
 		m_RootLayout = rootView.findViewById(R.id.title);
-		final Button available = (Button) rootView.findViewById(R.id.available);
+		final Button available = (Button) rootView.findViewById(R.id.rightBtn);
+		available.setText(R.string.available);
 		available.setVisibility(View.VISIBLE);
 		available.setClickable(true);
 		available.setOnClickListener(new OnClickListener(){

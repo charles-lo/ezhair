@@ -23,7 +23,7 @@
         android:textSize="@dimen/title_font_01" />
 
     <Button
-        android:id="@+id/available"
+        android:id="@+id/rightBtn"
         android:layout_width="66.67dp"
         android:layout_height="33.33dp"
         android:layout_alignParentRight="true"
@@ -31,7 +31,6 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/btn_top"
         android:gravity="center"
-        android:text="@string/available"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_size"
         android:visibility="gone" />
