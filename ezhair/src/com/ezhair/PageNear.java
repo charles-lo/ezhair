@@ -19,6 +19,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,8 +41,31 @@ public class PageNear extends Fragment {
 		View rootView = inflater.inflate(R.layout.page_near, container, false);
 		final View touch = rootView.findViewById(R.id.touch);
 		m_RootLayout = rootView.findViewById(R.id.title);
+		final Button available = (Button) rootView.findViewById(R.id.available);
+		available.setVisibility(View.VISIBLE);
+		available.setClickable(true);
+		available.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				m_ToogleGreen = false;
+				m_ToogleBlack = true;
+				((MainActivity) getActivity()).replaceFragment(new PageResult());
+				
+			}});
+		rootView.findViewById(R.id.back).setVisibility(View.GONE);
 		rootView.findViewById(R.id.btn).setVisibility(View.GONE);
 		rootView.findViewById(R.id.bottom_region).setBackground(null);
+		final Button mapAvailable = (Button) rootView.findViewById(R.id.available_map);
+		mapAvailable.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				m_ToogleGreen = false;
+				m_ToogleBlack = true;
+				((MainActivity) getActivity()).replaceFragment(new PageResult());
+				
+			}});
 
 		rootView.findViewById(R.id.left_tab).setBackgroundResource(R.drawable.rounded_btn_black_left_selected);
 		((TextView) rootView.findViewById(R.id.page_title)).setText(R.string.near_search);
@@ -82,6 +107,7 @@ public class PageNear extends Fragment {
 					m_ToogleGreen = false;
 					flipCard(m_RootLayout, m_CardFace, m_CardBack);
 					m_ToogleBlack = true;
+					mapAvailable.setVisibility(View.GONE);
 					return true;
 				}
 
@@ -89,6 +115,7 @@ public class PageNear extends Fragment {
 					m_ToogleBlack = false;
 					flipCard(m_RootLayout, m_CardBack, m_CardFace);
 					m_ToogleGreen = true;
+					mapAvailable.setVisibility(View.VISIBLE);
 					return true;
 				}
 				return false;

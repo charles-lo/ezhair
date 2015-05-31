@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -41,6 +42,14 @@ public class PageResult extends Fragment {
 								PorterDuff.Mode.SRC_ATOP));
 		View rootView = inflater.inflate(R.layout.page_common, container, false);
 		final View bottom = rootView.findViewById(R.id.bottom);
+		final View back = rootView.findViewById(R.id.back);
+		back.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).back();
+				
+			}});
 		rootView.findViewById(R.id.btn).setVisibility(View.GONE);
 		rootView.findViewById(R.id.bottom_region).setBackground(null);
 		m_RootLayout = rootView.findViewById(R.id.title);

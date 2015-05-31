@@ -39,6 +39,14 @@ public class PageSearch extends Fragment {
 				((MainActivity) getActivity()).replaceFragment(new PageResult());
 				
 			}});
+		final View back = rootView.findViewById(R.id.back);
+		back.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).back();
+				
+			}});
 		m_RootLayout = rootView.findViewById(R.id.title);
 		ListView list = (ListView) rootView.findViewById(R.id.listView);
 		rootView.findViewById(R.id.center_tab).setBackgroundResource(R.drawable.rounded_btn_black_center_selected);

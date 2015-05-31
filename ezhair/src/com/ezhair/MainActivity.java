@@ -54,11 +54,13 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onBackPressed() {
-
+		back();
+	}
+	
+	public void back() {
 		if (!getFragmentManager().popBackStackImmediate()) {
 			finish();
 		}
-
 	}
 
 	public void replaceFragment(Fragment newFragment) {
