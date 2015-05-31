@@ -7,6 +7,7 @@
     <color name="title_prefix">#8fc31f  </color>
     <color name="title_suffix">#dae000  </color>
     <color name="btn_green">#679700  </color>
+    <color name="divider">#dcdcdc  </color>
     <color name="gray">#ececec  </color>
     <color name="gray_01">#f1f1f1  </color>
     <color name="gray_star">#bfbfbf  </color>
