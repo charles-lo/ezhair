@@ -3,6 +3,7 @@
 
     <!-- common -->
     <color name="title_color_01">#b1bf93  </color>
+    <color name="title_color_02">#606060  </color>
     <color name="list_font_color">#5c5c5c  </color>
     <color name="title_prefix">#8fc31f  </color>
     <color name="title_suffix">#dae000  </color>

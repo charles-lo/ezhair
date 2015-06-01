@@ -49,5 +49,13 @@
     <string name="works">作品集</string>
     <string name="msgs">留言</string>
     <string name="favorites">最愛</string>
+    <string name="name">姓   名 :</string>
+    <string name="rate_profile">評   價 :</string>
+    <string name="fame">人   氣 :</string>
+    <string name="discount_profike">折   扣 :</string>
+    <string name="store_profile">店   家 :</string>
+    <string name="address">地   址 :</string>
+    <string name="experience">經   歷 :</string>
+    <string name="reserve">預約</string>
 
 </resources>

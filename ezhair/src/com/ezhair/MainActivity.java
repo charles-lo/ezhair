@@ -1,18 +1,13 @@
 package com.ezhair;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 
 public class MainActivity extends Activity {
 	FragmentTransaction ft = null;
@@ -28,12 +23,6 @@ public class MainActivity extends Activity {
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction().add(R.id.container, new PageHome()).commit();
 		}
-		// Uri uri =
-		// Uri.parse("http://upload.wikimedia.org/wikipedia/commons/5/53/Zhuangzong_of_Later_Tang.jpg");
-		// SimpleDraweeView draweeView = (SimpleDraweeView)
-		// findViewById(R.id.my_image_view);
-		// draweeView.setImageURI(uri);
-		// draweeView.invalidate();
 	}
 
 	@Override

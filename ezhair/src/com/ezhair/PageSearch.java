@@ -6,6 +6,7 @@ import java.util.List;
 import com.ezhair.R;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -185,6 +186,11 @@ public class PageSearch extends Fragment {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_rate, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
 					holder.btn = (TextView) convertView.findViewById(R.id.btn);
+					holder.rates.add((ImageView) convertView.findViewById(R.id.rate_01));
+					holder.rates.add((ImageView) convertView.findViewById(R.id.rate_02));
+					holder.rates.add((ImageView) convertView.findViewById(R.id.rate_03));
+					holder.rates.add((ImageView) convertView.findViewById(R.id.rate_04));
+					holder.rates.add((ImageView) convertView.findViewById(R.id.rate_05));
 				} else if (type == TYPE_EDIT) {
 					convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_edit, parent, false);
 					holder.category = (TextView) convertView.findViewById(R.id.category);
@@ -235,6 +241,10 @@ public class PageSearch extends Fragment {
 
 			if (m_Data.get(position).m_Type == TYPE_RATE) {
 				holder.category.setText(m_Data.get(position).m_Title);
+				for (int i = 0; i < m_Data.get(position).m_Value; i++) {
+					holder.rates.get(i).setColorFilter(Color.TRANSPARENT);
+					holder.rates.get(i).setImageResource(R.drawable.icon_star_select);
+				}
 			}
 			if (m_Data.get(position).m_Type == TYPE_BTN) {
 				holder.btn.setText(R.string.page_search_btn);
@@ -263,6 +273,7 @@ public class PageSearch extends Fragment {
 			TextView desc;
 			TextView btn;
 			EditText edit;
+			List<ImageView> rates = new ArrayList<ImageView>();
 		}
 	}
 }

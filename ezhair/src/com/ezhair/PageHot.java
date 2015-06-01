@@ -6,8 +6,7 @@ import java.util.List;
 import com.ezhair.R;
 
 import android.app.Fragment;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -30,12 +29,7 @@ public class PageHot extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		getActivity()
-				.getResources()
-				.getDrawable(R.drawable.icon_star_n)
-				.setColorFilter(
-						new PorterDuffColorFilter(PageHot.this.getActivity().getResources().getColor(R.color.gray_star),
-								PorterDuff.Mode.SRC_ATOP));
+
 		View rootView = inflater.inflate(R.layout.page_common, container, false);
 		final View bottom = rootView.findViewById(R.id.bottom);
 		final View btn = rootView.findViewById(R.id.btn);
@@ -174,6 +168,7 @@ public class PageHot extends Fragment {
 			holder.store.setText(m_Data.get(position).m_Store);
 			holder.address.setText(m_Data.get(position).m_Address);
 			for(int i=0; i<m_Data.get(position).m_Value; i++){
+				holder.rates.get(i).setColorFilter(Color.TRANSPARENT);
 				holder.rates.get(i).setImageResource(R.drawable.icon_star_select);
 			}
 

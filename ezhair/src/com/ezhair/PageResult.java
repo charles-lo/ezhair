@@ -4,12 +4,13 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ezhair.PageProfile.ProfileArgs;
 import com.ezhair.R;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.gson.Gson;
 
 import android.app.Fragment;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,22 +35,18 @@ public class PageResult extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		getActivity()
-				.getResources()
-				.getDrawable(R.drawable.icon_star_n)
-				.setColorFilter(
-						new PorterDuffColorFilter(PageResult.this.getActivity().getResources().getColor(R.color.gray_star),
-								PorterDuff.Mode.SRC_ATOP));
+
 		View rootView = inflater.inflate(R.layout.page_common, container, false);
 		final View bottom = rootView.findViewById(R.id.bottom);
 		final View back = rootView.findViewById(R.id.back);
-		back.setOnClickListener(new OnClickListener(){
+		back.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				((MainActivity) getActivity()).back();
-				
-			}});
+
+			}
+		});
 		rootView.findViewById(R.id.btn).setVisibility(View.GONE);
 		rootView.findViewById(R.id.bottom_region).setBackground(null);
 		m_RootLayout = rootView.findViewById(R.id.title);
@@ -157,7 +154,7 @@ public class PageResult extends Fragment {
 		}
 
 		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		public View getView(final int position, View convertView, ViewGroup parent) {
 			ViewHolder holder = new ViewHolder();
 			if (convertView == null) {
 				convertView = LayoutInflater.from(getActivity()).inflate(R.layout.listitem_result, parent, false);
@@ -183,18 +180,27 @@ public class PageResult extends Fragment {
 			holder.region.setText(m_Data.get(position).m_Region);
 			String uriBase = "http://www.sucaifengbao.com/uploadfile/photo/meinvtupianbizhi/meinvtupianbizhi_813_";
 			DecimalFormat df = new DecimalFormat("'0'.jpg");
-			Uri uri = Uri.parse(uriBase + df.format(position + 20));
+			final Uri uri = Uri.parse(uriBase + df.format(position + 20));
 			holder.avatar.setImageURI(uri);
-			holder.discount.setText(m_Data.get(position).m_Discount  ? "有" : "無");
-			convertView.setOnClickListener(new OnClickListener(){
+			holder.discount.setText(m_Data.get(position).m_Discount ? "有" : "無");
+			convertView.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					((MainActivity) getActivity()).replaceFragment(new PageProfile());
-					
-				}});
+					Fragment profile = new PageProfile();
+					Bundle bundle = new Bundle();
+					bundle.putString(PageProfile.ARG, new Gson().toJson(new ProfileArgs(uri.toString(), String.format("%s  (%s / %d / %d)",
+							m_Data.get(position).m_Name, (m_Data.get(position).m_Gender == GENDER_MALE) ? "男" : "女",
+							m_Data.get(position).m_Age, m_Data.get(position).m_Age), m_Data.get(position).m_Rate, 73829, "染燙85折",
+							m_Data.get(position).m_Store, m_Data.get(position).m_Region)));
+					profile.setArguments(bundle);
+					((MainActivity) getActivity()).replaceFragment(profile);
+
+				}
+			});
 
 			for (int i = 0; i < m_Data.get(position).m_Rate; i++) {
+				holder.rates.get(i).setColorFilter(Color.TRANSPARENT);
 				holder.rates.get(i).setImageResource(R.drawable.icon_star_select);
 			}
 

@@ -46,40 +46,7 @@
             android:textColor="#666666"
             android:textSize="@dimen/font_size" />
 
-        <ImageView
-            android:id="@+id/rate_01"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_02"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_03"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_04"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_05"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
+      <include layout="@layout/rate_view" />
     </LinearLayout>
 
     <LinearLayout

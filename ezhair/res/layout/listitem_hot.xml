@@ -38,50 +38,12 @@
         android:textColor="@color/list_font_color"
         android:textSize="17sp" />
 
-    <LinearLayout
-        android:id="@+id/rate"
+    <include
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp" >
-
-        <ImageView
-            android:id="@+id/rate_01"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_02"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_03"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_04"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-
-        <ImageView
-            android:id="@+id/rate_05"
-            android:layout_width="@dimen/rate_len_01"
-            android:layout_height="@dimen/rate_len_01"
-            android:paddingLeft="2.67dp"
-            android:src="@drawable/icon_star_n" />
-    </LinearLayout>
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        layout="@layout/rate_view" />
 
 </RelativeLayout>

@@ -1,66 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
     android:background="@android:color/white"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    <include layout="@layout/green_bar" />
-
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray_01" >
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/avatar"
-            android:layout_width="189.33dp"
-            android:layout_height="189.33dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            fresco:fadeDuration="125"
-            fresco:placeholderImage="@color/gray_star"
-            fresco:roundAsCircle="true"
-            fresco:roundingBorderColor="@color/border"
-            fresco:roundingBorderWidth="5dp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/listitem_height"
+        android:layout_marginBottom="@dimen/listitem_height" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/avatar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:layout_marginTop="12dp" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/btn_works"
-                android:text="@string/works"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_size" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_01" >
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/btn_msg"
-                android:text="@string/msgs"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_size" />
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/avatar"
+                    android:layout_width="189.33dp"
+                    android:layout_height="189.33dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="14dp"
+                    fresco:fadeDuration="125"
+                    fresco:placeholderImage="@color/gray_star"
+                    fresco:roundAsCircle="true"
+                    fresco:roundingBorderColor="@color/border"
+                    fresco:roundingBorderWidth="5dp" />
 
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@drawable/btn_love"
-                android:text="@string/favorites"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/font_size" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/avatar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp" >
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_works"
+                        android:text="@string/works"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_msg"
+                        android:text="@string/msgs"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_love"
+                        android:text="@string/favorites"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_size" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/name"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <TextView
+                    android:id="@+id/basic_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/name"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/rate_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/rate_profile"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:layout_toRightOf="@id/rate_title"
+                    layout="@layout/rate_view" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/fame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/fame"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <TextView
+                    android:id="@+id/fame_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/fame"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/discount_profike"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <TextView
+                    android:id="@+id/discount_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/discount"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/store_profile"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <TextView
+                    android:id="@+id/store_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/store"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/address"
+                    android:textColor="@color/title_color_02"
+                    android:textSize="@dimen/font_size" />
+
+                <TextView
+                    android:id="@+id/address_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/address"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/icon_map" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46.67dp" >
+
+                <TextView
+                    android:id="@+id/experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/experience"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/font_size" />
+            </RelativeLayout>
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
 
-</LinearLayout>
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/listitem_height"
+        android:layout_alignParentTop="true"
+        layout="@layout/green_bar" />
+
+    <include
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        layout="@layout/bottom_bar" />
+
+</RelativeLayout>
