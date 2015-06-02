@@ -55,6 +55,7 @@
                         android:textSize="@dimen/font_size" />
 
                     <Button
+                        android:id="@+id/msgs"
                         android:layout_width="100dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="5dp"

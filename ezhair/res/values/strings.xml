@@ -57,5 +57,8 @@
     <string name="address">地   址 :</string>
     <string name="experience">經   歷 :</string>
     <string name="reserve">預約</string>
+    <!-- page message -->
+    <string name="message">留言版</string>
+    <string name="whrite">留言</string>
 
 </resources>

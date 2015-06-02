@@ -7,6 +7,7 @@ import com.ezhair.R;
 
 import android.app.Fragment;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -55,6 +56,9 @@ public class PageHot extends Fragment {
 		m_CardFace = rootView.findViewById(R.id.green_bar);
 		m_CardBack = rootView.findViewById(R.id.black_bar);
 		((ImageView) rootView.findViewById(R.id.bottom_01)).setImageResource(R.drawable.tabbar_foorter_search_select);
+		rootView.findViewById(R.id.btn).setVisibility(View.GONE);
+		rootView.findViewById(R.id.bottom_region).setBackground(null);
+		list.setPadding(0, 0, 0, ((BitmapDrawable)getResources().getDrawable(R.drawable.tabbar_foorter_search)).getBitmap().getHeight());
 		list.setAdapter(new SearchAdapter());
 		list.setOnTouchListener(new OnTouchListener() {
 

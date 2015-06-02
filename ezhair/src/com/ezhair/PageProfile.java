@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class PageProfile extends Fragment {
@@ -40,6 +39,16 @@ public class PageProfile extends Fragment {
 		Button rightBtn = (Button) rootView.findViewById(R.id.rightBtn);
 		rightBtn.setVisibility(View.VISIBLE);
 		rightBtn.setText(R.string.reserve);
+		final View btn = rootView.findViewById(R.id.msgs);
+		btn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).replaceFragment(new PageMessage());
+				
+			}});
+		
+		
 		ProfileArgs args = new Gson().fromJson((String) getArguments().getString(ARG), ProfileArgs.class);
 		((SimpleDraweeView) rootView.findViewById(R.id.avatar)).setImageURI(Uri.parse(args.m_Avatar));
 		((TextView) rootView.findViewById(R.id.basic_info)).setText(args.m_Info);
