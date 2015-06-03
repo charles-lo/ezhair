@@ -32,7 +32,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="14dp"
                     fresco:fadeDuration="125"
-                    fresco:placeholderImage="@color/gray_star"
+                    fresco:placeholderImage="@drawable/pic_none"
                     fresco:roundAsCircle="true"
                     fresco:roundingBorderColor="@color/border"
                     fresco:roundingBorderWidth="5dp" />
@@ -125,7 +125,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="22dp"
                     android:layout_toRightOf="@id/rate_title"
-                    layout="@layout/rate_view" />
+                    layout="@layout/view_rate" />
 
                 <View
                     android:layout_width="match_parent"

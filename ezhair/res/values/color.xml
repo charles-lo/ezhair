@@ -4,6 +4,7 @@
     <!-- common -->
     <color name="title_color_01">#b1bf93  </color>
     <color name="title_color_02">#606060  </color>
+    <color name="title_color_03">#6f8e19  </color>
     <color name="list_font_color">#5c5c5c  </color>
     <color name="title_prefix">#8fc31f  </color>
     <color name="title_suffix">#dae000  </color>
@@ -12,6 +13,7 @@
     <color name="gray">#ececec  </color>
     <color name="gray_01">#f1f1f1  </color>
     <color name="gray_02">#b3b3b3  </color>
+    <color name="gray_03">#2e2e2e  </color>
     <color name="gray_star">#bfbfbf  </color>
     <color name="border">#d5d5d5  </color>
     <!-- page home -->

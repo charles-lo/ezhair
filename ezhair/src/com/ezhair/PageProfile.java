@@ -3,6 +3,7 @@ package com.ezhair;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ezhair.PageMessage.MessageArgs;
 import com.ezhair.R;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
@@ -39,17 +40,22 @@ public class PageProfile extends Fragment {
 		Button rightBtn = (Button) rootView.findViewById(R.id.rightBtn);
 		rightBtn.setVisibility(View.VISIBLE);
 		rightBtn.setText(R.string.reserve);
+		
+		
+		
+		final ProfileArgs args = new Gson().fromJson((String) getArguments().getString(ARG), ProfileArgs.class);
+		
 		final View btn = rootView.findViewById(R.id.msgs);
 		btn.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
-				((MainActivity) getActivity()).replaceFragment(new PageMessage());
-				
+				Fragment message = new PageMessage();
+				Bundle bundle = new Bundle();
+				bundle.putString(PageMessage.ARG, new Gson().toJson(new MessageArgs(args.m_Avatar)));
+				message.setArguments(bundle);
+				((MainActivity) getActivity()).replaceFragment(message);
 			}});
-		
-		
-		ProfileArgs args = new Gson().fromJson((String) getArguments().getString(ARG), ProfileArgs.class);
 		((SimpleDraweeView) rootView.findViewById(R.id.avatar)).setImageURI(Uri.parse(args.m_Avatar));
 		((TextView) rootView.findViewById(R.id.basic_info)).setText(args.m_Info);
 		List<ImageView> rates = new ArrayList<ImageView>();

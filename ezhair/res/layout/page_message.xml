@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <include layout="@layout/green_bar" />
+
+            <include layout="@layout/black_bar" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/no_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_arrow" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/avatar"
+                    android:layout_width="189.33dp"
+                    android:layout_height="189.33dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="65dp"
+                    fresco:fadeDuration="125"
+                    fresco:placeholderImage="@drawable/pic_none"
+                    fresco:roundAsCircle="true"
+                    fresco:roundingBorderColor="@color/border"
+                    fresco:roundingBorderWidth="5dp" />
+
+                <TextView
+                    android:id="@+id/txt01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/avatar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/encourage"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/title_font_03" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt01"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/first"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/listitem_font" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/divider"
+                android:dividerHeight="2dp"
+                android:paddingBottom="120dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/gray" >
+
+        <TextView
+            android:id="@+id/btn"
+            android:layout_width="@dimen/page_signin_btn_width"
+            android:layout_height="@dimen/page_signin_btn_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/btn_green"
+            android:gravity="center"
+            android:text="@string/page_search_btn"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_size" />
+
+        <include
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn"
+            android:layout_centerHorizontal="true"
+            layout="@layout/bottom_bar" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -44,6 +44,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        layout="@layout/rate_view" />
+        layout="@layout/view_rate" />
 
 </RelativeLayout>

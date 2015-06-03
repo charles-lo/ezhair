@@ -29,6 +29,6 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="22dp"
         android:layout_toLeftOf="@id/arrow"
-        layout="@layout/rate_view" />
+        layout="@layout/view_rate" />
 
 </RelativeLayout>

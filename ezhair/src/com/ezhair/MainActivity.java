@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 	public void replaceFragment(Fragment newFragment) {
 		getFragmentManager().beginTransaction().replace(R.id.container, newFragment).addToBackStack(null).commit();
 	}
-	
+
 	/**
 	 * @return the launched
 	 */

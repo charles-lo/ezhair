@@ -12,7 +12,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         fresco:fadeDuration="125"
-        fresco:placeholderImage="@color/gray_star"
+        fresco:placeholderImage="@drawable/pic_none"
         fresco:roundAsCircle="true"
         fresco:roundingBorderColor="@color/border"
         fresco:roundingBorderWidth="5dp" />
@@ -46,7 +46,7 @@
             android:textColor="#666666"
             android:textSize="@dimen/font_size" />
 
-      <include layout="@layout/rate_view" />
+      <include layout="@layout/view_rate" />
     </LinearLayout>
 
     <LinearLayout
