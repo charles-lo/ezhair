@@ -29,6 +29,8 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
+        android:paddingLeft="3dp"
+        android:background="@drawable/rect_btn_gray"
         android:ellipsize="end"
         android:singleLine="false" />
 
@@ -37,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="16.67dp"
-        android:layout_marginLeft="18.67dp"
-        android:layout_marginRight="18.67dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="44dp"
         android:background="@drawable/btn_green"
         android:gravity="center"
         android:text="@string/write_artist"
