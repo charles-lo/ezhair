@@ -9,6 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Fragment;
@@ -53,9 +54,16 @@ public class PageNear extends Fragment {
 						m_Location = LocationServices.FusedLocationApi.getLastLocation(m_GoogleApiClient);
 						m_Map.moveCamera(CameraUpdateFactory.newLatLngZoom(
 								new LatLng(m_Location.getLatitude(), m_Location.getLongitude()), ZOOM_LEVEL));
-						m_Map.addMarker((new MarkerOptions().position(
-								new LatLng(m_Location.getLatitude(), m_Location.getLongitude())).title("Jordan EZHair 工作室")
-								.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_map_location))));
+						m_Map.addMarker(
+								(new MarkerOptions().position(new LatLng(m_Location.getLatitude(), m_Location.getLongitude()))
+										.title("Jordan EZHair 工作室").icon(BitmapDescriptorFactory
+										.fromResource(R.drawable.icon_map_location)))).showInfoWindow();
+
+						m_Map.addMarker(
+								(new MarkerOptions().position(
+										new LatLng(m_Location.getLatitude() - 0.002, m_Location.getLongitude() + 0.002)).title(
+										"鍾大屌髮廊").icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_map_salon))))
+								.showInfoWindow();
 					}
 
 					@Override
