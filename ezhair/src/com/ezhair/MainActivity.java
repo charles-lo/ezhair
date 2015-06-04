@@ -1,6 +1,7 @@
 package com.ezhair;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 
 import android.app.Activity;
 import android.app.Fragment;

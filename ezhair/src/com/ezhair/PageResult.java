@@ -6,7 +6,12 @@ import java.util.List;
 
 import com.ezhair.PageProfile.ProfileArgs;
 import com.ezhair.R;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.google.gson.Gson;
 
 import android.app.Fragment;
@@ -181,7 +186,17 @@ public class PageResult extends Fragment {
 			String uriBase = "http://www.sucaifengbao.com/uploadfile/photo/meinvtupianbizhi/meinvtupianbizhi_813_";
 			DecimalFormat df = new DecimalFormat("'0'.jpg");
 			final Uri uri = Uri.parse(uriBase + df.format(position + 20));
-			holder.avatar.setImageURI(uri);
+			//
+			int width, height;
+			width = height = (int) (PageResult.this.getActivity().getResources().getDisplayMetrics().density * 115);
+			ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+					.setResizeOptions(new ResizeOptions(width, height))
+					.setLocalThumbnailPreviewsEnabled(true)
+					.setProgressiveRenderingEnabled(true).build();
+			DraweeController controller = Fresco.newDraweeControllerBuilder().setImageRequest(request)
+					.setOldController(holder.avatar.getController()).build();
+			holder.avatar.setController(controller);
+			//
 			holder.discount.setText(m_Data.get(position).m_Discount ? "¦³" : "µL");
 			convertView.setOnClickListener(new OnClickListener() {
 

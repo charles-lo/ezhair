@@ -31,7 +31,6 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="14dp"
-                    fresco:fadeDuration="125"
                     fresco:placeholderImage="@drawable/pic_none"
                     fresco:roundAsCircle="true"
                     fresco:roundingBorderColor="@color/border"

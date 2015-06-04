@@ -7,7 +7,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.ezhair.R;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.google.gson.Gson;
 
 import android.app.Dialog;
@@ -115,7 +120,17 @@ public class PageMessage extends Fragment {
 				.getHeight());
 		m_List.setAdapter(adapter);
 		m_Empty = rootView.findViewById(R.id.no_message);
-		((SimpleDraweeView) rootView.findViewById(R.id.avatar)).setImageURI(Uri.parse(args.m_Avatar));
+		//
+		int width, height;
+		width = height = (int) (PageMessage.this.getActivity().getResources().getDisplayMetrics().density * 189.33);
+		ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(args.m_Avatar))
+				.setResizeOptions(new ResizeOptions(width, height))
+				.setLocalThumbnailPreviewsEnabled(true)
+				.setProgressiveRenderingEnabled(true).build();
+		SimpleDraweeView image = ((SimpleDraweeView) rootView.findViewById(R.id.avatar));
+		DraweeController controller = Fresco.newDraweeControllerBuilder().setImageRequest(request)
+				.setOldController(image.getController()).build();
+		image.setController(controller);
 		check();
 		return rootView;
 	}

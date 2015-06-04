@@ -8,15 +8,18 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/avatar01"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         fresco:placeholderImage="@drawable/pic_none" />
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/avatar02"
         android:layout_width="115dp"
         android:layout_height="115dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@id/avatar01"
         fresco:placeholderImage="@drawable/pic_none" />
@@ -26,8 +29,9 @@
         android:layout_width="115dp"
         android:layout_height="115dp"
         android:layout_alignParentRight="true"
+        android:layout_below="@id/avatar02"
         android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@id/avatar02"
+        android:layout_toRightOf="@id/avatar01"
         fresco:placeholderImage="@drawable/pic_none" />
 
 </RelativeLayout>

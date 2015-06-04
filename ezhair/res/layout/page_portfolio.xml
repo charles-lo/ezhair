@@ -29,7 +29,6 @@
                 android:layout_width="230dp"
                 android:layout_height="230dp"
                 android:layout_alignParentLeft="true"
-                fresco:fadeDuration="125"
                 fresco:placeholderImage="@drawable/pic_none"
                 fresco:roundingBorderColor="@color/border"
                 fresco:roundingBorderWidth="5dp" />
@@ -40,7 +39,6 @@
                 android:layout_height="115dp"
                 android:layout_marginLeft="5dp"
                 android:layout_alignParentRight="true"
-                fresco:fadeDuration="125"
                 fresco:placeholderImage="@drawable/pic_none"
                 fresco:roundingBorderColor="@color/border"
                 fresco:roundingBorderWidth="5dp" />
@@ -50,7 +48,6 @@
                 android:layout_height="115dp"
                 android:layout_marginLeft="5dp"
                 android:layout_alignParentRight="true"
-                fresco:fadeDuration="125"
                 fresco:placeholderImage="@drawable/pic_none"
                 fresco:roundingBorderColor="@color/border"
                 fresco:roundingBorderWidth="5dp" />
