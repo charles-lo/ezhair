@@ -63,5 +63,7 @@
     <string name="write_artist">留言給設計師</string>
     <string name="encourage">給你的設計師一點鼓勵吧</string>
     <string name="first">成為第一個留言的會員</string>
+    <!-- page portfolio -->
+    <string name="portfolio">作品集</string>
 
 </resources>

@@ -45,8 +45,8 @@ public class PageProfile extends Fragment {
 		
 		final ProfileArgs args = new Gson().fromJson((String) getArguments().getString(ARG), ProfileArgs.class);
 		
-		final View btn = rootView.findViewById(R.id.msgs);
-		btn.setOnClickListener(new OnClickListener(){
+		final View msg = rootView.findViewById(R.id.msgs);
+		msg.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
@@ -55,6 +55,14 @@ public class PageProfile extends Fragment {
 				bundle.putString(PageMessage.ARG, new Gson().toJson(new MessageArgs(args.m_Avatar)));
 				message.setArguments(bundle);
 				((MainActivity) getActivity()).replaceFragment(message);
+			}});
+		final View portfolio = rootView.findViewById(R.id.portfolio);
+		portfolio.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Fragment message = new PageMessage();
+				((MainActivity) getActivity()).replaceFragment(new PagePortfolio());
 			}});
 		((SimpleDraweeView) rootView.findViewById(R.id.avatar)).setImageURI(Uri.parse(args.m_Avatar));
 		((TextView) rootView.findViewById(R.id.basic_info)).setText(args.m_Info);

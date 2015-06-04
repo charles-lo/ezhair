@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/avatar"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        fresco:fadeDuration="125"
+        fresco:placeholderImage="@drawable/pic_none"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/border"
+        fresco:roundingBorderWidth="5dp" />
+
+    <TextView
+        android:id="@+id/basic_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/avatar"
+        android:textColor="#000000"
+        android:textSize="@dimen/font_size" />
+
+    <LinearLayout
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/basic_info"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/avatar" >
+
+        <TextView
+            android:id="@+id/rate_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rate"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size" />
+
+      <include layout="@layout/view_rate" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rate"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/avatar" >
+
+        <TextView
+            android:id="@+id/store_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/store"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/store_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/store"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/avatar" >
+
+        <TextView
+            android:id="@+id/region_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/store"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/region_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/region"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/avatar" >
+
+        <TextView
+            android:id="@+id/discount_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discount"
+            android:textColor="#666666"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/discount_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/available"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_size" />
+    </LinearLayout>
+
+</RelativeLayout>

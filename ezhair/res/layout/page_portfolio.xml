@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <include layout="@layout/green_bar" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp" >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/avatar_01"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_alignParentLeft="true"
+                fresco:fadeDuration="125"
+                fresco:placeholderImage="@drawable/pic_none"
+                fresco:roundingBorderColor="@color/border"
+                fresco:roundingBorderWidth="5dp" />
+            
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/avatar_02"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"
+                fresco:fadeDuration="125"
+                fresco:placeholderImage="@drawable/pic_none"
+                fresco:roundingBorderColor="@color/border"
+                fresco:roundingBorderWidth="5dp" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/avatar_03"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"
+                fresco:fadeDuration="125"
+                fresco:placeholderImage="@drawable/pic_none"
+                fresco:roundingBorderColor="@color/border"
+                fresco:roundingBorderWidth="5dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
