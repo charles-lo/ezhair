@@ -48,6 +48,13 @@ public class PagePortfolio extends Fragment {
 		final TextView right = (TextView) rootView.findViewById(R.id.rightBtn);
 		right.setText(R.string.reserve);
 		right.setVisibility(View.VISIBLE);
+		right.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).replaceFragment(new PageReserve());
+				
+			}});
 		
 		rootView.findViewById(R.id.btn).setVisibility(View.GONE);
 		rootView.findViewById(R.id.bottom_region).setBackground(null);

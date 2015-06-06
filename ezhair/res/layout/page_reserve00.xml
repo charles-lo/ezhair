@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/gray" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <include layout="@layout/green_bar" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white" >
+
+            <LinearLayout
+                android:id="@+id/item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/item"
+                    android:textColor="@color/btn_green"
+                    android:textSize="@dimen/title_font_04" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/btn_green" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/date"
+                    android:textColor="@color/gray_04"
+                    android:textSize="@dimen/title_font_04" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/btn_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/time"
+                    android:textColor="@color/gray_04"
+                    android:textSize="@dimen/title_font_04" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/btn_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/type"
+                    android:textColor="@color/gray_04"
+                    android:textSize="@dimen/title_font_04" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/btn_green"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/haircut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="36.67dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/haircut"
+                android:textColor="@color/btn_green"
+                android:textSize="@dimen/listitem_font" />
+
+            <CheckBox
+                android:id="@+id/haircut_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/haircut_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/haircut_check"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/gray_04"
+                android:textSize="@dimen/listitem_font" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/wash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="36.67dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/wash"
+                android:textColor="@color/btn_green"
+                android:textSize="@dimen/listitem_font" />
+
+            <CheckBox
+                android:id="@+id/wash_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/wash_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/wash_check"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/gray_04"
+                android:textSize="@dimen/listitem_font" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/dye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="36.67dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/dye"
+                android:textColor="@color/btn_green"
+                android:textSize="@dimen/listitem_font" />
+
+            <CheckBox
+                android:id="@+id/dye_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/dye_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/dye_check"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/gray_04"
+                android:textSize="@dimen/listitem_font" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/perm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="36.67dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/perm"
+                android:textColor="@color/btn_green"
+                android:textSize="@dimen/listitem_font" />
+
+            <CheckBox
+                android:id="@+id/perm_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/perm_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/perm_check"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/gray_04"
+                android:textSize="@dimen/listitem_font" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/haircare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="36.67dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/haircare"
+                android:textColor="@color/btn_green"
+                android:textSize="@dimen/listitem_font" />
+
+            <CheckBox
+                android:id="@+id/haircare_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/haircare_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/haircare_check"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/gray_04"
+                android:textSize="@dimen/listitem_font" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="@dimen/page_signin_btn_width"
+                android:layout_height="@dimen/page_signin_btn_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/btn_green"
+                android:gravity="center"
+                android:text="@string/page_search_btn"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        layout="@layout/bottom_bar" />
+
+</RelativeLayout>
