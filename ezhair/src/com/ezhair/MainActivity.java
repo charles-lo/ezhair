@@ -22,7 +22,8 @@ public class MainActivity extends Activity {
 
 		new PageHome();
 		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction().add(R.id.container, new PageHome()).commit();
+//			getFragmentManager().beginTransaction().add(R.id.container, new PageHome()).commit();
+			getFragmentManager().beginTransaction().add(R.id.container, new PageTest_dimension()).commit();
 		}
 	}
 

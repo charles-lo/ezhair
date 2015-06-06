@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clipChildren="false" >
+
+    <View
+        android:id="@+id/view02"
+        android:layout_width="match_parent"
+        android:layout_height="640px"
+        android:layout_centerInParent="true"
+        android:background="#ff0000" >
+    </View>
+
+    <View
+        android:id="@+id/view01"
+        android:layout_width="360px"
+        android:layout_height="640px"
+        android:layout_centerInParent="true"
+        android:background="#00FF00" >
+    </View>
+
+    <ImageView
+        android:id="@+id/img01"
+        android:layout_width="360px"
+        android:layout_height="640px"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bg_index" >
+    </ImageView>
+
+</RelativeLayout>
